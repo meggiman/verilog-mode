@@ -2735,24 +2735,24 @@ find the errors."
        ))))
 (defconst verilog-declaration-core-re
   (eval-when-compile
-    (verilog-regexp-words
-     `(
-       ;; port direction (by themselves)
-       "inout" "input" "output"
-       ;; integer_atom_type
-       "byte" "shortint" "int" "longint" "integer" "time"
-       ;; integer_vector_type
-       "bit" "logic" "reg"
-       ;; non_integer_type
-       "shortreal" "real" "realtime"
-       ;; net_type
-       "supply0" "supply1" "tri" "triand" "trior" "trireg" "tri0" "tri1" "uwire" "wire" "wand" "wor"
-       ;; misc
-       "string" "event" "chandle" "virtual" "enum" "genvar"
-       "struct" "union"
-       ;; builtin classes
-       "mailbox" "semaphore"
-       ))))
+    (concat (substring (verilog-regexp-words
+                        `(
+                          ;; port direction (by themselves)
+                          "inout" "input" "output"
+                          ;; integer_atom_type
+                          "byte" "shortint" "int" "longint" "integer" "time"
+                          ;; integer_vector_type
+                          "bit" "logic" "reg"
+                          ;; non_integer_type
+                          "shortreal" "real" "realtime"
+                          ;; net_type
+                          "supply0" "supply1" "tri" "triand" "trior" "trireg" "tri0" "tri1" "uwire" "wire" "wand" "wor"
+                          ;; misc
+                          "string" "event" "chandle" "virtual" "enum" "genvar"
+                          "struct" "union"
+                          ;; builtin classes
+                          "mailbox" "semaphore"
+                          )) 0 -4) "\\|\\(\\sw+::\\)?\\sw*_t\\)\\>")))
 (defconst verilog-declaration-re
   (concat "\\(" verilog-declaration-prefix-re "\\s-*\\)?" verilog-declaration-core-re))
 (defconst verilog-range-re "\\(\\[[^]]*\\]\\s-*\\)+")
