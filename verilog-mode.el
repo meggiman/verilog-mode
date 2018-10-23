@@ -2723,7 +2723,7 @@ find the errors."
     (verilog-regexp-words
      `(
        ;; port direction
-       "inout" "input" "output" "ref"
+       "inout" "input" "output" "ref" "inout wire" "input wire" "output wire"
        ;; changeableness
        "const" "static" "protected" "local"
        ;; parameters
