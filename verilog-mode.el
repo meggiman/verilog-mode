@@ -3151,19 +3151,19 @@ See also `verilog-font-lock-extra-types'.")
   :group 'font-lock-highlighting-faces)
 
 (let* ((verilog-type-font-keywords
-	(eval-when-compile
-	  (verilog-regexp-opt
-	   '(
-	     "and" "bit" "buf" "bufif0" "bufif1" "cmos" "defparam"
-	     "event" "genvar" "inout" "input" "integer" "localparam"
-	     "logic" "mailbox" "nand" "nmos" "nor" "not" "notif0" "notif1" "or"
-	     "output" "parameter" "pmos" "pull0" "pull1" "pulldown" "pullup"
-	     "rcmos" "real" "realtime" "reg" "rnmos" "rpmos" "rtran"
-	     "rtranif0" "rtranif1" "semaphore" "signed" "struct" "supply"
-	     "supply0" "supply1" "time" "tran" "tranif0" "tranif1"
-	     "tri" "tri0" "tri1" "triand" "trior" "trireg" "typedef"
-	     "uwire" "vectored" "wand" "wire" "wor" "xnor" "xor"
-	     ) nil  )))
+        (eval-when-compile
+	        (concat (substring (verilog-regexp-opt
+	                            '(
+	                              "and" "bit" "buf" "bufif0" "bufif1" "cmos" "defparam"
+	                              "event" "genvar" "inout" "input" "integer" "localparam"
+	                              "logic" "mailbox" "nand" "nmos" "nor" "not" "notif0" "notif1" "or"
+	                              "output" "parameter" "pmos" "pull0" "pull1" "pulldown" "pullup"
+	                              "rcmos" "real" "realtime" "reg" "rnmos" "rpmos" "rtran"
+	                              "rtranif0" "rtranif1" "semaphore" "signed" "struct" "supply"
+	                              "supply0" "supply1" "time" "tran" "tranif0" "tranif1"
+	                              "tri" "tri0" "tri1" "triand" "trior" "trireg" "typedef"
+	                              "uwire" "vectored" "wand" "wire" "wor" "xnor" "xor"
+	                              ) nil  ) 0 -2) "\\|\\(\\sw+::\\)?\\sw*_t\\)\\>")))
 
        (verilog-pragma-keywords
 	(eval-when-compile
