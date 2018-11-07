@@ -2752,7 +2752,7 @@ find the errors."
                           "struct" "union"
                           ;; builtin classes
                           "mailbox" "semaphore"
-                          )) 0 -4) "\\|\\(\\sw+::\\)?\\sw*_t\\)\\>")))
+                          )) 0 -4) "\\|\\(\\sw+::\\)?\\sw*_\\(t\\|e\\)\\)\\>")))
 (defconst verilog-declaration-re
   (concat "\\(" verilog-declaration-prefix-re "\\s-*\\)?" verilog-declaration-core-re))
 (defconst verilog-range-re "\\(\\[[^]]*\\]\\s-*\\)+")
@@ -3163,7 +3163,7 @@ See also `verilog-font-lock-extra-types'.")
 	                              "supply0" "supply1" "time" "tran" "tranif0" "tranif1"
 	                              "tri" "tri0" "tri1" "triand" "trior" "trireg" "typedef"
 	                              "uwire" "vectored" "wand" "wire" "wor" "xnor" "xor"
-	                              ) nil  ) 0 -2) "\\|\\(\\sw+::\\)?\\sw*_t\\)\\>")))
+	                              ) nil  ) 0 -2) "\\|\\(\\sw+::\\)?\\sw*_\\(t\\|e\\)\\)\\>")))
 
        (verilog-pragma-keywords
 	(eval-when-compile
