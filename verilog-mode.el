@@ -1404,7 +1404,7 @@ See also `verilog-case-fold'."
     ("*Functions*"  "^\\s-*\\(?:\\(?:static\\|pure\\|virtual\\|local\\|protected\\)\\s-+\\)*function\\s-+\\(?:\\(?:static\\|automatic\\)\\s-+\\)?\\(?:\\w+\\s-+\\)?\\(?:\\(?:un\\)signed\\s-+\\)?\\([A-Za-z_][A-Za-z0-9_:]+\\)" 1)
     ("*Interfaces*" "^\\s-*interface\\s-+\\([a-zA-Z_0-9]+\\)" 1)
     ("*Types*"      "^\\s-*typedef\\s-+.*\\s-+\\([a-zA-Z_0-9]+\\)\\s-*;" 1)
-    ("*Submodules*" "\\([A-Za-z0-1_]+\\) \\([A-Za-z0-1_]+\\)[[:space:]]+(" 2)
+    ("*Submodules*" "^[[:space:]]+\\([A-Za-z0-1_]+\\) \\([A-Za-z0-1_]+\\)[[:space:]]*(" 2)
     )
   "Imenu expression for Verilog mode.  See `imenu-generic-expression'.")
 
